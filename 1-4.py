@@ -16,20 +16,34 @@
 ###
 # Prints some array elements
 #
+# Definiujemy tablicę z wartościami
 arr = [2, 3, 7, 5, 4]
 
-print(arr)
-print('Number of elements', len(arr))
-print('First value', arr[0])
-print('Last value', arr[-1])
-print('Last but one value value', arr[len(arr)-2])
-print('Sum of the first value and last', arr[0] + arr[-1])
-print('Middle value: ', arr[int(len(arr)/2)] )
-print('All array values seperated by a single space: ')
-string = ""
+# Wypisujemy całą tablicę
+print("Tablica:", arr)
 
-for index in range(len(arr)):
-    string = string + str(arr[index]) + " "
+# Liczba elementów w tablicy
+print("Liczba elementów:", len(arr))
 
-print(string)
-    
+# Pierwszy element tablicy
+print("Pierwsza wartość:", arr[0])
+
+# Druga wartość w tablicy
+print("Druga wartość:", arr[1])
+
+# Ostatnia wartość w tablicy
+print("Ostatnia wartość:", arr[len(arr)-1])  # len(arr)-1 to ostatni indeks
+
+# Przedostatnia wartość w tablicy
+print("Przedostatnia wartość:", arr[len(arr)-2])
+
+# Suma pierwszej i ostatniej wartości
+print("Suma pierwszej i ostatniej wartości:", arr[0] + arr[len(arr)-1])
+
+# Środkowa wartość tablicy
+print("Środkowa wartość:", arr[len(arr)//2])  # // oznacza dzielenie całkowite
+
+# Wszystkie wartości tablicy oddzielone spacją
+print("Wszystkie wartości oddzielone spacją:")
+for i in arr:  # Iterujemy po elementach tablicy
+    print(i, end=" ")  # Wypisujemy elementy w jednym wierszu

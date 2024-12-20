@@ -11,37 +11,29 @@
 ###
 # Prints test statistics
 #
+# Lista wyników testu (True - poprawna odpowiedź, False - niepoprawna odpowiedź)
 test_results = [
-   False, True, False, True, True,
-   True, True, False, True, True,
-   False, True, True, True, False
+    False, True, False, True, True,
+    True, True, False, True, True,
+    False, True, True, True, False
 ]
 
-# calculates the number of test questions
+# Obliczamy liczbę pytań w teście
 question_number = len(test_results)
 
-# calculates the number of correct answers
-correct_answers = 0
+# Obliczamy liczbę poprawnych odpowiedzi
+correct_answers = sum(test_results)  # Sumowanie True (wartość 1) daje liczbę poprawnych odpowiedzi
 
-for answer in test_results:
-   if answer == True:
-      correct_answers += 1
+# Obliczamy liczbę niepoprawnych odpowiedzi
+incorrect_answers = question_number - correct_answers  # Wszystkie pytania minus poprawne
 
+# Obliczamy procent poprawnych odpowiedzi
+percentage = (correct_answers / question_number) * 100
 
-# calculates the number of incorrect answers
-incorrect_answers = 0
-
-for answer in test_results:
-   if answer == False:
-      incorrect_answers += 1
-      
-
-# calculates the percentage of correct answers
-percantage = correct_answers/question_number *100
-
-print('TEST STATISTICS')
-print('===============')
-print('Number of questions:', question_number)
-print('Number of correct answers:', correct_answers)
-print('Number of incorrect answers:', incorrect_answers)
-print("Percentage of correct answers: ", percantage, "%")
+# Wyświetlamy statystyki testu
+print('STATYSTYKI TESTU')
+print('================')
+print('Liczba pytań:', question_number)
+print('Liczba poprawnych odpowiedzi:', correct_answers)
+print('Liczba niepoprawnych odpowiedzi:', incorrect_answers)
+print('Procent poprawnych odpowiedzi:', round(percentage, 2), '%')
