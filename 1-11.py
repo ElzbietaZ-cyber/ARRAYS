@@ -14,40 +14,38 @@
 ###
 # The weather station report
 #
+# Wyniki pomiarów temperatur w marcu (1 pomiar dziennie)
 temperatures = [
- 3, 7, 1, -2, 6, -4, 5, 1, 2, 3,
- 4, -1, 0, 2, -1, -2, 5, -2, 7, 2,
- -1, 4, 1, -4, 2, 3, 6, 7, 5, 7
+    3, 7, 1, -2, 6, -4, 5, 1, 2, 3,
+    4, -1, 0, 2, -1, -2, 5, -2, 7, 2,
+    -1, 4, 1, -4, 2, 3, 6, 7, 5, 7
 ]
 
-# number of mesaurements
-mesaurements = len(temperatures)
+# Liczba pomiarów
+measurements = len(temperatures)
 
-# calculates average temperature
-temp_total = 0
-for temp in temperatures:
-   temp_total += temp
+# Obliczanie średniej temperatury
+total_temp = 0
+for temp in temperatures:  # Iterujemy przez każdą temperaturę
+    total_temp += temp  # Dodajemy temperaturę do sumy
 
-avg_temp = temp_total / mesaurements
+avg_temp = total_temp / measurements  # Średnia temperatura
 
-# calculates min and max temperatures
-min_temp = min(temperatures)
-max_temp = max(temperatures)
+# Najniższa i najwyższa temperatura
+min_temp = min(temperatures)  # Minimalna temperatura
+max_temp = max(temperatures)  # Maksymalna temperatura
 
-# calculates number of days with negative temp
+# Liczba dni z temperaturą ujemną
 negative_temp = 0
-i = 0
-while i < len(temperatures):
-   if temperatures[i] < 0:
-      negative_temp += 1
-   i += 1
+for temp in temperatures:  # Iterujemy przez temperatury
+    if temp < 0:  # Sprawdzamy, czy temperatura jest ujemna
+        negative_temp += 1  # Zwiększamy licznik dni z ujemną temperaturą
 
-# prints out month report
-
+# Wyświetlanie raportu
 print("TEMPERATURE REPORT")
 print("Month: March")
-print("Number of measurements: ", mesaurements)
-print("Average temperature in the month: ", avg_temp)
-print("Minimum temperature: ", min_temp)
-print("Maximum temperature: ", max_temp)
-print("Number of days with negative temperature: ", negative_temp)
+print("Number of measurements:", measurements)
+print("Average temperature in the month:", round(avg_temp, 2))  # Zaokrąglamy średnią do 2 miejsc
+print("Minimum temperature:", min_temp)
+print("Maximum temperature:", max_temp)
+print("Number of days with negative temperature:", negative_temp)
